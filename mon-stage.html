@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon stage - Yann</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<header>
+      <div class="logo-title">
+        <img src="images/logo.png" alt="Logo TechMinds Alliance">
+        <h1></h1>
+    </div>
+        <nav>
+                <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+                <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="mon-stage.html">Mon stage</a></li>
+                <li><a href="systemes_information.html" class="active">Systèmes d'information</a></li>
+                <li><a href="réseaux.html">Réseaux informatiques</a></li>
+                <li><a href="cybersécurité.html">Cybersécurité</a></li>
+                <li><a href="cryptage.html">Cryptage César</a></li>
+                <li><a href="certificats.html">Les Certificats Numériques</a></li>
+                <li><a href="https.html">Le protocole HTTPS</a></li>
+                <li><a href="python.html">Python</a></li>
+                <li><a href="qui-suis-je.html" class="active">Qui suis‑je ?</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <h1 class="fade-in-up">Mon stage chez TechMinds Alliance</h1>
+    <p class="fade-in-up delay-1">Voici un résumé de ce que j'ai fait chaque jour pendant ma semaine de stage en informatique.</p>
+
+    <section class="box fade-in-up delay-1">
+        <span class="badge">Jour 1</span>
+        <h2 class="day-title">Découverte de l'entreprise et d'Internet</h2>
+        <ul>
+            <li>Présentation de TechMinds Alliance et du métier de consultant en systèmes d'information.</li>
+            <li>Rappel sur le fonctionnement d'Internet, du web et des navigateurs.</li>
+            <li>Installation des outils : navigateur, VS Code, accès au projet.</li>
+        </ul>
+    </section>
+
+    <section class="box fade-in-up delay-2">
+        <span class="badge">Jour 2</span>
+        <h2 class="day-title">Création du site web de stage</h2>
+        <ul>
+            <li>Découverte du HTML (titres, paragraphes, listes, liens).</li>
+            <li>Création de la page d'accueil et du menu de navigation.</li>
+            <li>Ajout de contenu : présentation du stage et de l'entreprise.</li>
+        </ul>
+    </section>
+
+    <section class="box fade-in-up delay-3">
+        <span class="badge">Jour 3</span>
+        <h2 class="day-title">Introduction à la programmation</h2>
+        <ul>
+            <li>Découverte du langage Python.</li>
+            <li>Variables, conditions, boucles.</li>
+            <li>Petit projet : générateur de mot de passe en Python.</li>
+        </ul>
+    </section>
+
+    <section class="box fade-in-up delay-4">
+        <span class="badge">Jour 4</span>
+        <h2 class="day-title">Cybersécurité</h2>
+        <ul>
+            <li>Comprendre les risques : virus, phishing, vol de comptes, ransomwares.</li>
+            <li>Bonnes pratiques : mots de passe forts, double authentification, sauvegardes.</li>
+            <li>Création de la page <em>Cybersécurité</em> avec un outil pour tester la force d'un mot de passe.</li>
+        </ul>
+    </section>
+
+    <section class="box fade-in-up delay-4">
+        <span class="badge">Jour 5</span>
+        <h2 class="day-title">Réseaux informatiques et finalisation</h2>
+        <ul>
+            <li>Introduction aux réseaux (box Internet, routeur, Wi-Fi, câbles, adresses IP).</li>
+            <li>Création de la page <em>Réseaux informatiques</em> avec un schéma explicatif.</li>
+            <li>Relecture, corrections et mise en ligne du site via GitHub Pages.</li>
+        </ul>
+    </section>
+</main>
+
+<script>
+function toggleMenu() {
+    document.getElementById("nav-links").classList.toggle("open");
+}
+</script>
+
+</body>
+</html>

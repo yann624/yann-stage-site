@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - Stage 3ème Yann</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+     <div class="logo-title">
+        <img src="images/logo.png" alt="Logo TechMinds Alliance">
+        <h1></h1>
+    </div>
+        <nav>
+                <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+                <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="mon-stage.html">Mon stage</a></li>
+                <li><a href="systemes_information.html" class="active">Systèmes d'information</a></li>
+                <li><a href="réseaux.html">Réseaux informatiques</a></li>
+                <li><a href="cybersécurité.html">Cybersécurité</a></li>
+                <li><a href="cryptage.html">Cryptage César</a></li>
+                <li><a href="certificats.html">Les Certificats Numériques</a></li>
+                <li><a href="https.html">Le protocole HTTPS</a></li>
+                <li><a href="python.html">Python</a></li>
+                <li><a href="qui-suis-je.html" class="active">Qui suis‑je ?</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <h1 class="fade-in-up">Bienvenue sur mon site de stage</h1>
+    <p class="fade-in-up" style="animation-delay:0.1s;">Ce site présente le travail que j'ai réalisé pendant mon stage d'observation chez <strong>TechMinds Alliance</strong>.</p>
+
+    <section class="box fade-in-up" style="animation-delay:0.2s;">
+        <h2>Présentation du stage</h2>
+        <p>Pendant une semaine, j'ai découvert le monde de l'informatique : développement web, cybersécurité, réseaux informatiques et systèmes d'information.</p>
+    </section>
+
+    <section class="box fade-in-up" style="animation-delay:0.3s;">
+        <h2>Ce que j'ai appris</h2>
+        <ul>
+            <li>Créer un site web en HTML/CSS</li>
+            <li>Comprendre les bases de la programmation</li>
+            <li>Découvrir la cybersécurité (mots de passe, phishing, virus…)</li>
+            <li>Apprendre comment fonctionne un réseau informatique</li>
+        </ul>
+    </section>
+</main>
+
+<script>
+function toggleMenu() {
+    document.getElementById("nav-links").classList.toggle("open");
+}
+</script>
+
+</body>
+</html>

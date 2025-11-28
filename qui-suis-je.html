@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qui suis-je ? - Yann</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<header>
+       <div class="logo-title">
+        <img src="images/logo.png" alt="Logo TechMinds Alliance">
+        <h1></h1>
+    </div>
+        <nav>
+                <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+                <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="mon-stage.html">Mon stage</a></li>
+                <li><a href="systemes_information.html" class="active">Systèmes d'information</a></li>
+                <li><a href="réseaux.html">Réseaux informatiques</a></li>
+                <li><a href="cybersécurité.html">Cybersécurité</a></li>
+                <li><a href="cryptage.html">Cryptage César</a></li>
+                <li><a href="certificats.html">Les Certificats Numériques</a></li>
+                <li><a href="https.html">Le protocole HTTPS</a></li>
+                <li><a href="python.html">Python</a></li>
+                <li><a href="qui-suis-je.html" class="active">Qui suis‑je ?</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <h1 class="fade-in-up">Qui suis‑je ?</h1>
+    <p class="fade-in-up delay-1">Petite présentation personnelle pour mieux me connaître.</p>
+
+    <section class="box fade-in-up delay-2" style="text-align:center;">
+        <img src="images/yann2025.PNG" alt="Photo de profil" class="photo-profil">
+        <h2>Moi, c’est Yann 👋</h2>
+        <p>Je suis élève de 3ᵉ et j’ai réalisé mon stage d’observation chez TechMinds Alliance. J’aime l’informatique, la technologie et j’ai découvert beaucoup de choses pendant cette semaine.</p>
+    </section>
+
+    <section class="box fade-in-up delay-3">
+        <h2>Mes centres d’intérêt</h2>
+        <ul>
+            <li>🔧 L’informatique et les nouvelles technologies</li>
+            <li>🎮 Les jeux vidéo</li>
+            <li>📱 Les réseaux sociaux</li>
+            <li>🏀 Le sport</li>
+            <li>🎥 Les films et séries</li>
+        </ul>
+    </section>
+
+    <section class="box fade-in-up delay-3">
+        <h2>Ce que j’ai préféré pendant le stage</h2>
+        <ul>
+            <li>Créer mon propre site web</li>
+            <li>Programmer un outil en Python</li>
+            <li>Comprendre les bases de la cybersécurité</li>
+            <li>Découvrir comment fonctionne un réseau informatique</li>
+        </ul>
+    </section>
+</main>
+
+<script>
+function toggleMenu() {
+    document.getElementById("nav-links").classList.toggle("open");
+}
+</script>
+
+</body>
+</html>

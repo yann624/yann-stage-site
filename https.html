@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>HTTPS - TechMinds Alliance</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Style global -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo-title">
+        <img src="images/logo.png" alt="LogoTechMinds">
+        <h1>HTTPS - Connexion sécurisée</h1>
+    </div>
+
+    <div class="menu-toggle" id="menuToggle">☰ Menu</div>
+
+    <nav>
+        <ul id="mainMenu">
+              <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+                <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="mon-stage.html">Mon stage</a></li>
+                <li><a href="systemes_information.html" class="active">Systèmes d'information</a></li>
+                <li><a href="réseaux.html">Réseaux informatiques</a></li>
+                <li><a href="cybersécurité.html">Cybersécurité</a></li>
+                <li><a href="cryptage.html">Cryptage César</a></li>
+                <li><a href="certificats.html">Les Certificats Numériques</a></li>
+                <li><a href="https.html">Le protocole HTTPS</a></li>
+                <li><a href="python.html">Python</a></li>
+                <li><a href="qui-suis-je.html" class="active">Qui suis‑je ?</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <h2>🔐 Qu’est-ce que HTTPS ?</h2>
+
+    <div class="card">
+        <p>
+            HTTPS signifie <strong>HyperText Transfer Protocol Secure</strong>. 
+            C’est la version <strong>sécurisée</strong> du protocole HTTP utilisé pour afficher des pages web.
+        </p>
+
+        <p>
+            Avec HTTPS, les échanges entre ton ordinateur et un site web sont :
+        </p>
+
+        <ul>
+            <li>✔ chiffrés (personne ne peut lire ce que tu envoies)</li>
+            <li>✔ authentifiés (tu es sur le vrai site)</li>
+            <li>✔ protégés contre les pirates</li>
+        </ul>
+    </div>
+
+    <h2>🏫 Explication simple (niveau collège)</h2>
+
+    <div class="card">
+        <p>
+            Imagine que tu écris un message sur une carte postale.
+        </p>
+        <p>
+            ➤ Tout le monde peut le lire → c’est <strong>HTTP</strong>.
+        </p>
+        <br>
+        <p>
+            Maintenant, tu mets ton message dans une enveloppe fermée.
+        </p>
+        <p>
+            ➤ Personne ne voit ce qu’il y a dedans → c’est <strong>HTTPS</strong>.
+        </p>
+    </div>
+
+    <h2>🔍 Comment reconnaître un site HTTPS ?</h2>
+
+    <div class="card">
+        <ul>
+            <li>🔒 Il y a un cadenas dans la barre d’adresse</li>
+            <li>🌐 L’adresse commence par <strong>https://</strong></li>
+            <li>🛡 Le navigateur affiche “Connexion sécurisée”</li>
+        </ul>
+
+        <p>Exemples :</p>
+        <ul>
+            <li>https://google.com</li>
+            <li>https://github.com</li>
+            <li>https://amazon.fr</li>
+        </ul>
+
+        <p>
+            Exemple non sécurisé :
+        </p>
+        <ul>
+            <li>http://example.com</li>
+        </ul>
+    </div>
+
+    <h2>🛡 À quoi sert HTTPS ?</h2>
+
+    <div class="card">
+        <h3>1️⃣ Chiffrer la connexion</h3>
+        <p>
+            Les informations envoyées (mot de passe, messages, paiements…) sont protégées.
+        </p>
+
+        <h3>2️⃣ Vérifier l’identité du site</h3>
+        <p>
+            Grâce au certificat SSL, ton navigateur sait que c’est le vrai site, pas un faux.
+        </p>
+
+        <h3>3️⃣ Empêcher les attaques</h3>
+        <p>
+            HTTPS empêche les pirates d’espionner, de modifier les pages ou d’injecter un virus.
+        </p>
+    </div>
+
+    <h2>🧪 Petite expérience pour ton stagiaire</h2>
+
+    <div class="card">
+        <p>1. Aller sur <strong>https://google.com</strong></p>
+        <p>2. Cliquer sur le cadenas → “Connexion sécurisée”</p>
+        <p>3. Voir les détails du certificat</p>
+
+        <br>
+
+        <p>Ensuite :</p>
+        <p>⚠ Aller sur <strong>http://example.com</strong> → pas de cadenas</p>
+    </div>
+
+    <h2>🧠 Comment HTTPS fonctionne (explication simple)</h2>
+
+    <div class="card">
+        <ol>
+            <li>1. Le site envoie son certificat.</li>
+            <li>2. Le navigateur vérifie qu’il est vrai.</li>
+            <li>3. Ils créent ensemble une clé secrète (chiffrement).</li>
+            <li>4. Toute la connexion est chiffrée.</li>
+        </ol>
+
+        <p>
+            Ce processus se fait automatiquement en moins d’une seconde.
+        </p>
+    </div>
+
+    <h2>📝 Mini-quiz</h2>
+
+    <div class="exercice">
+        <h3>1️⃣ À quoi sert HTTPS ?</h3>
+        <ul>
+            <li>A — À rendre le site plus joli</li>
+            <li>B — À sécuriser la connexion et vérifier l’identité du site</li>
+            <li>C — À charger plus vite les vidéos</li>
+        </ul>
+        <p><strong>👉 Réponse : B</strong></p>
+    </div>
+
+    <div class="exercice">
+        <h3>2️⃣ Comment reconnaître HTTPS ?</h3>
+        <ul>
+            <li>A — Il y a un cadenas 🔒</li>
+            <li>B — L’adresse commence par https://</li>
+            <li>C — Les deux</li>
+        </ul>
+        <p><strong>👉 Réponse : C</strong></p>
+    </div>
+
+    <div class="exercice">
+        <h3>3️⃣ Pourquoi éviter HTTP ?</h3>
+        <ul>
+            <li>A — Parce que c’est moche</li>
+            <li>B — Parce que la connexion n’est pas protégée</li>
+            <li>C — Parce que ça fait chauffer le PC</li>
+        </ul>
+        <p><strong>👉 Réponse : B</strong></p>
+    </div>
+
+</main>
+
+<footer>
+    © 2025 TechMinds Alliance – Page pédagogique HTTPS (stage 3ᵉ)
+</footer>
+
+<script>
+    // Menu mobile
+    const menuToggle = document.getElementById('menuToggle');
+    const mainMenu = document.getElementById('mainMenu');
+    menuToggle.addEventListener('click', () => {
+        mainMenu.classList.toggle('open');
+    });
+</script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersécurité - Stage 3ème</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+    <div class="logo-title">
+        <img src="images/logo.png" alt="Logo TechMinds Alliance">
+        <h1></h1>
+    </div>
+       
+    </div>
+            <nav>
+                <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+                <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="mon-stage.html">Mon stage</a></li>
+                <li><a href="systemes_information.html" class="active">Systèmes d'information</a></li>
+                <li><a href="réseaux.html">Réseaux informatiques</a></li>
+                <li><a href="cybersécurité.html">Cybersécurité</a></li>
+                <li><a href="cryptage.html">Cryptage César</a></li>
+                <li><a href="certificats.html">Les Certificats Numériques</a></li>
+                <li><a href="https.html">Le protocole HTTPS</a></li>
+                <li><a href="python.html">Python</a></li>
+                <li><a href="qui-suis-je.html" class="active">Qui suis‑je ?</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1 class="page-title fade-in-up">Cybersécurité</h1>
+        <p class="subtitle fade-in-up fade-delay-1">Protéger ses comptes, ses données et ses appareils du monde numérique.</p>
+
+        <section class="box fade-in-up fade-delay-1">
+            <span class="badge">Cours</span>
+            <h2>C'est quoi la cybersécurité ?</h2>
+            <p>La cybersécurité regroupe toutes les méthodes pour protéger les ordinateurs, les téléphones, les comptes et les données contre les attaques informatiques. Pendant ce stage, j'ai découvert plusieurs types de menaces :</p>
+            <ul>
+                <li><strong>Les virus informatiques</strong> : des programmes qui se propagent et abîment l'ordinateur.</li>
+                <li><strong>Le phishing</strong> : de fausses pages ou de faux messages qui essaient de voler tes identifiants.</li>
+                <li><strong>Le vol de comptes</strong> : quand quelqu'un récupère ton mot de passe et se connecte à ta place.</li>
+                <li><strong>Les ransomwares</strong> : des logiciels qui bloquent tes fichiers et demandent de l'argent pour les débloquer.</li>
+                <li><strong>La perte ou la destruction de fichiers</strong> : panne, suppression, attaque, etc.</li>
+                <li><strong>Le chiffrement</strong> : transformer un message pour qu'il devienne illisible (exemple : code César).</li>
+            </ul>
+            <p>Un des moyens les plus simples pour se protéger est d'utiliser des <strong>mots de passe forts</strong>. Ci-dessous, j'ai créé un outil pour tester la sécurité d'un mot de passe.</p>
+        </section>
+
+        <section class="box fade-in-up fade-delay-2">
+            <span class="badge">Outil interactif</span>
+            <h2>Vérifier la sécurité d'un mot de passe</h2>
+            <p>Entre un <strong>mot de passe de test</strong> (jamais un vrai !) puis clique sur <em>Analyser</em>. La page te dira s'il est plutôt <strong>faible</strong>, <strong>moyen</strong> ou <strong>fort</strong>, et donnera des conseils pour l'améliorer.</p>
+
+            <div style="margin-bottom: 10px;">
+                <input type="password" id="mdp" placeholder="Tape ton mot de passe de test">
+                <button onclick="analyserMotDePasse()">Analyser</button>
+            </div>
+
+            <div id="resultat"></div>
+        </section>
+
+        <section class="box fade-in-up fade-delay-3">
+            <span class="badge">Bonnes pratiques</span>
+            <h2>Mes conseils cybersécurité</h2>
+            <ul>
+                <li>Utiliser un mot de passe différent pour chaque compte important.</li>
+                <li>Activer la <strong>double authentification</strong> (code SMS, application, clé de sécurité) quand c'est possible.</li>
+                <li>Ne jamais cliquer sur un lien bizarre reçu par mail ou SMS.</li>
+                <li>Vérifier l'adresse du site avant de taper son mot de passe.</li>
+                <li>Ne pas installer de logiciels qui viennent de sites inconnus.</li>
+                <li>Parler à un adulte ou à un professionnel en cas de doute.</li>
+            </ul>
+        </section>
+    </main>
+
+    <script>
+    function toggleMenu() {
+        const nav = document.getElementById('nav-links');
+        nav.classList.toggle('open');
+    }
+
+    function verifierMotDePasse(mdp) {
+        const longueur = mdp.length;
+
+        const aMinuscule = /[a-z]/.test(mdp);
+        const aMajuscule = /[A-Z]/.test(mdp);
+        const aChiffre   = /[0-9]/.test(mdp);
+        const aSpecial   = /[!@#$%&*?+\-_=]/.test(mdp);
+
+        let score = 0;
+
+        if (longueur >= 8) score++;
+        if (longueur >= 12) score++;
+        if (aMinuscule) score++;
+        if (aMajuscule) score++;
+        if (aChiffre) score++;
+        if (aSpecial) score++;
+
+        let niveau;
+        if (score <= 2) niveau = "FAIBLE";
+        else if (score <= 4) niveau = "MOYEN";
+        else niveau = "FORT";
+
+        return {
+            niveau: niveau,
+            longueur: longueur,
+            aMinuscule: aMinuscule,
+            aMajuscule: aMajuscule,
+            aChiffre: aChiffre,
+            aSpecial: aSpecial,
+            score: score
+        };
+    }
+
+    function analyserMotDePasse() {
+        const champ = document.getElementById("mdp");
+        const resultatDiv = document.getElementById("resultat");
+        const mdp = champ.value;
+
+        if (mdp === "") {
+            resultatDiv.innerHTML = "<p style='color:red;'>⚠ Merci de saisir un mot de passe de test.</p>";
+            return;
+        }
+
+        const infos = verifierMotDePasse(mdp);
+
+        let couleur;
+        if (infos.niveau === "FAIBLE") couleur = "#e74c3c";
+        else if (infos.niveau === "MOYEN") couleur = "#f1c40f";
+        else couleur = "#27ae60";
+
+        let html = "";
+
+        html += "<h3>Résultat de l'analyse</h3>";
+        html += "<p>Longueur : <strong>" + infos.longueur + "</strong> caractères</p>";
+        html += "<p>Contient des minuscules : <strong>" + (infos.aMinuscule ? "Oui" : "Non") + "</strong></p>";
+        html += "<p>Contient des MAJUSCULES : <strong>" + (infos.aMajuscule ? "Oui" : "Non") + "</strong></p>";
+        html += "<p>Contient des chiffres : <strong>" + (infos.aChiffre ? "Oui" : "Non") + "</strong></p>";
+        html += "<p>Contient des caractères spéciaux : <strong>" + (infos.aSpecial ? "Oui" : "Non") + "</strong></p>";
+
+        html += "<p><strong>Niveau de sécurité :</strong> <span style='color:" + couleur + ";font-weight:bold;'>" + infos.niveau + "</span></p>";
+
+        html += "<h4>Conseils pour améliorer ton mot de passe :</h4>";
+        html += "<ul>";
+
+        if (infos.longueur < 8) html += "<li>Utilise au moins 8 caractères.</li>";
+        else if (infos.longueur < 12) html += "<li>12 caractères ou plus = plus sécurisé.</li>";
+
+        if (!infos.aMinuscule) html += "<li>Ajoute des lettres minuscules.</li>";
+        if (!infos.aMajuscule) html += "<li>Ajoute des lettres MAJUSCULES.</li>";
+        if (!infos.aChiffre) html += "<li>Ajoute des chiffres.</li>";
+        if (!infos.aSpecial) html += "<li>Ajoute des caractères spéciaux (ex : ! @ # $ %).</li>";
+
+        if (infos.score >= 5)
+            html += "<li>Ton mot de passe est déjà très bon, garde-le secret !</li>";
+
+        html += "</ul>";
+
+        html += "<p style='font-size: 0.9em; color: gray;'>⚠ N'utilise jamais ton vrai mot de passe ici. Teste uniquement des exemples.</p>";
+
+        resultatDiv.innerHTML = html;
+    }
+    </script>
+
+</body>
+</html>

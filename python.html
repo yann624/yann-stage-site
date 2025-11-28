@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Cours Python - Stage 3ᵉ - TechMinds Alliance</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Style global -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo-title">
+        <img src="images/logo.png" alt="Logo TechMinds Alliance">
+        <h1>Cours Python - Stage 3ᵉ</h1>
+    </div>
+
+    <div class="menu-toggle" id="menuToggle">☰ Menu</div>
+
+    <nav>
+       <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+                <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="mon-stage.html">Mon stage</a></li>
+                <li><a href="systemes_information.html" class="active">Systèmes d'information</a></li>
+                <li><a href="réseaux.html">Réseaux informatiques</a></li>
+                <li><a href="cybersécurité.html">Cybersécurité</a></li>
+                <li><a href="cryptage.html">Cryptage César</a></li>
+                <li><a href="certificats.html">Les Certificats Numériques</a></li>
+                <li><a href="https.html">Le protocole HTTPS</a></li>
+                <li><a href="python.html">Python</a></li>
+                <li><a href="qui-suis-je.html" class="active">Qui suis‑je ?</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <h2>🎯 Objectifs du cours Python</h2>
+
+    <div class="card">
+        <p>Ce cours Python est conçu pour un <strong>élève de 3ᵉ en stage</strong>.</p>
+        <p>À la fin de la semaine, il sera capable de :</p>
+        <ul>
+            <li>comprendre ce qu’est Python et exécuter un programme ;</li>
+            <li>utiliser les <strong>variables</strong>, les <strong>conditions</strong>, les <strong>boucles</strong> et les <strong>fonctions</strong> ;</li>
+            <li>créer un <strong>générateur de mot de passe</strong> ;</li>
+            <li>programmer le <strong>chiffrement César</strong> en Python.</li>
+        </ul>
+    </div>
+
+    <!-- JOUR 1 -->
+    <section id="jour1">
+        <h2>🧩 Jour 1 – Découverte de Python & variables</h2>
+
+        <div class="card">
+            <h3>1) Premier programme</h3>
+            <pre><code>print("Bonjour, je m'appelle Yann et je découvre Python !")</code></pre>
+
+            <p>À exécuter dans VS Code ou un terminal Python.</p>
+        </div>
+
+        <div class="card">
+            <h3>2) Variables & types simples</h3>
+            <pre><code>prenom = "Yann"
+age = 14
+taille = 1.60
+est_eleve = True
+
+print("Prénom :", prenom)
+print("Âge :", age)
+print("Taille :", taille, "m")
+print("Est élève ?", est_eleve)</code></pre>
+        </div>
+
+        <h3>Exercices (Jour 1)</h3>
+
+        <div class="exercice">
+            <p>1️⃣ Créer un fichier <code>presentation.py</code> qui affiche :</p>
+            <ul>
+                <li>ton prénom</li>
+                <li>ton âge</li>
+                <li>ta classe</li>
+                <li>ta ville</li>
+            </ul>
+            <p>2️⃣ Ajouter une phrase :</p>
+            <p><code>"Je m'appelle ... et j'ai ... ans."</code></p>
+
+            <p><strong>Correction possible :</strong></p>
+            <pre><code>prenom = "Yann"
+age = 14
+classe = "3e"
+ville = "Montigny-le-Bretonneux"
+
+print("Je m'appelle", prenom, "et j'ai", age, "ans.")
+print("Je suis en", classe, "et j'habite à", ville + ".")</code></pre>
+        </div>
+    </section>
+
+    <!-- JOUR 2 -->
+    <section id="jour2">
+        <h2>🧩 Jour 2 – Input & conditions if</h2>
+
+        <div class="card">
+            <h3>1) Lire au clavier</h3>
+            <pre><code>prenom = input("Comment tu t'appelles ? ")
+print("Bonjour", prenom, "!")</code></pre>
+        </div>
+
+        <div class="card">
+            <h3>2) Conditions if / else</h3>
+            <pre><code>age = int(input("Quel âge as-tu ? "))
+
+if age >= 18:
+    print("Tu es majeur.")
+else:
+    print("Tu es mineur.")</code></pre>
+        </div>
+
+        <h3>Exercices (Jour 2)</h3>
+
+        <div class="exercice">
+            <h4>🔐 Exercice 1 : mot de passe</h4>
+            <p>Créer un fichier <code>mot_de_passe.py</code> :</p>
+            <ul>
+                <li>Demander un mot de passe à l’utilisateur.</li>
+                <li>Si le mot de passe est <code>"python123"</code> → afficher <strong>"Accès autorisé"</strong>.</li>
+                <li>Sinon → afficher <strong>"Accès refusé"</strong>.</li>
+            </ul>
+
+            <p><strong>Correction :</strong></p>
+            <pre><code>mot_de_passe = input("Entrez le mot de passe : ")
+
+if mot_de_passe == "python123":
+    print("Accès autorisé")
+else:
+    print("Accès refusé")</code></pre>
+        </div>
+
+        <div class="exercice">
+            <h4>📝 Exercice 2 : note sur 20</h4>
+            <p>Demander une note sur 20 et afficher :</p>
+            <ul>
+                <li><code>note >= 16</code> → "Très bien"</li>
+                <li><code>note >= 12</code> → "Bien"</li>
+                <li><code>note >= 10</code> → "Passable"</li>
+                <li>sinon → "Insuffisant"</li>
+            </ul>
+
+            <p><strong>Correction :</strong></p>
+            <pre><code>note = int(input("Entrez une note sur 20 : "))
+
+if note >= 16:
+    print("Très bien")
+elif note >= 12:
+    print("Bien")
+elif note >= 10:
+    print("Passable")
+else:
+    print("Insuffisant")</code></pre>
+        </div>
+    </section>
+
+    <!-- JOUR 3 -->
+    <section id="jour3">
+        <h2>🧩 Jour 3 – Boucles for & while</h2>
+
+        <div class="card">
+            <h3>1) Boucle for</h3>
+            <pre><code>for i in range(5):
+    print("Tour de boucle :", i)</code></pre>
+        </div>
+
+        <div class="card">
+            <h3>2) Boucle while</h3>
+            <pre><code>compteur = 0
+
+while compteur &lt; 3:
+    print("Compteur =", compteur)
+    compteur = compteur + 1</code></pre>
+        </div>
+
+        <h3>Exercices (Jour 3)</h3>
+
+        <div class="exercice">
+            <h4>🔢 Exercice 1 : compter de 1 à 10</h4>
+            <p>Afficher les nombres de 1 à 10 avec un <code>for</code>.</p>
+            <p><strong>Correction :</strong></p>
+            <pre><code>for i in range(1, 11):
+    print(i)</code></pre>
+        </div>
+
+        <div class="exercice">
+            <h4>🔐 Exercice 2 : mot de passe avec while</h4>
+            <p>Tant que le mot de passe n’est pas correct, redemander sa saisie.</p>
+
+            <p><strong>Correction :</strong></p>
+            <pre><code>mot_de_passe_correct = "python123"
+mot_de_passe = ""
+
+while mot_de_passe != mot_de_passe_correct:
+    mot_de_passe = input("Entrez le mot de passe : ")
+
+print("Mot de passe correct !")</code></pre>
+        </div>
+    </section>
+
+    <!-- JOUR 4 -->
+    <section id="jour4">
+        <h2>🧩 Jour 4 – Fonctions & générateur de mot de passe</h2>
+
+        <div class="card">
+            <h3>1) Créer une fonction</h3>
+            <pre><code>def dire_bonjour(prenom):
+    print("Bonjour", prenom, "!")
+
+dire_bonjour("Yann")
+dire_bonjour("Christophe")</code></pre>
+        </div>
+
+        <div class="card">
+            <h3>2) Projet : générateur de mot de passe simple</h3>
+            <p>Objectif :</p>
+            <ul>
+                <li>Demander une longueur.</li>
+                <li>Refuser si la longueur est &lt; 8.</li>
+                <li>Générer un mot de passe avec lettres et chiffres.</li>
+            </ul>
+
+            <pre><code>import random
+import string  # pour letters + digits
+
+def generer_mot_de_passe(longueur):
+    if longueur &lt; 8:
+        print("Erreur : la longueur doit être au moins 8.")
+        return None
+
+    caracteres = string.ascii_letters + string.digits
+    mot_de_passe = ""
+
+    for i in range(longueur):
+        mot_de_passe += random.choice(caracteres)
+
+    return mot_de_passe
+
+
+print("=== Générateur de mot de passe ===")
+longueur = int(input("Longueur du mot de passe : "))
+
+mdp = generer_mot_de_passe(longueur)
+
+if mdp is not None:
+    print("Mot de passe généré :", mdp)</code></pre>
+
+            <p><strong>Idées d’amélioration pour le stagiaire :</strong></p>
+            <ul>
+                <li>ajouter des caractères spéciaux (<code>!@#$%</code>…)</li>
+                <li>limiter la longueur (ex : max 50)</li>
+                <li>proposer de regénérer un mot de passe</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- JOUR 5 -->
+    <section id="jour5">
+        <h2>🧩 Jour 5 – Projet : Chiffrement César en Python</h2>
+
+        <div class="card">
+            <p>On réutilise en Python le projet de cryptage César vu dans la partie cybersécurité / cryptage.</p>
+            <p>Créer un fichier <code>cesar.py</code> :</p>
+
+            <pre><code>def chiffrer_cesar(texte, cle):
+    resultat = ""
+    for char in texte:
+        if char.isalpha():
+            base = ord('A') if char.isupper() else ord('a')
+            resultat += chr((ord(char) - base + cle) % 26 + base)
+        else:
+            resultat += char
+    return resultat
+
+
+def dechiffrer_cesar(texte, cle):
+    return chiffrer_cesar(texte, -cle)
+
+
+print("=== Chiffrement César ===")
+mode = input("Tape C pour chiffrer ou D pour déchiffrer : ").upper()
+message = input("Message : ")
+cle = int(input("Clé (0 à 25) : "))
+
+if mode == "C":
+    print("Message chiffré :", chiffrer_cesar(message, cle))
+elif mode == "D":
+    print("Message déchiffré :", dechiffrer_cesar(message, cle))
+else:
+    print("Mode inconnu.")</code></pre>
+
+            <p><strong>Exemples de tests :</strong></p>
+            <ul>
+                <li>Message : <code>Bonjour</code>, clé : <code>3</code></li>
+                <li>Message : <code>HELLO WORLD</code>, clé : <code>5</code></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- FICHE MÉMO -->
+    <section id="memo">
+        <h2>🧾 Fiche mémo Python</h2>
+
+        <div class="card">
+<pre><code>print("...")           # afficher du texte
+variable = valeur      # créer une variable
+input("...")           # demander quelque chose à l’utilisateur
+int("10")              # convertir du texte en nombre
+
+if condition:
+    ...
+elif autre_condition:
+    ...
+else:
+    ...
+
+for i in range(0, 10):
+    ...
+
+while condition:
+    ...
+
+def ma_fonction(param):
+    ...
+    return resultat</code></pre>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    © 2025 TechMinds Alliance – Cours Python (stage 3ᵉ)
+</footer>
+
+<script>
+    // Menu mobile
+    const menuToggle = document.getElementById('menuToggle');
+    const mainMenu = document.getElementById('mainMenu');
+    menuToggle.addEventListener('click', () => {
+        mainMenu.classList.toggle('open');
+    });
+</script>
+
+</body>
+</html>
+
+

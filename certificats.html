@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Certificats numériques - TechMinds Alliance</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Style global du site -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo-title">
+        <img src="images/logo.png" alt="Logo TechMinds Alliance">
+        <h1>Certificats numériques (niveau 3ᵉ)</h1>
+    </div>
+
+    <div class="menu-toggle" id="menuToggle">☰ Menu</div>
+
+    <nav>
+        <ul id="mainMenu">
+              <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+                <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="mon-stage.html">Mon stage</a></li>
+                <li><a href="systemes_information.html" class="active">Systèmes d'information</a></li>
+                <li><a href="réseaux.html">Réseaux informatiques</a></li>
+                <li><a href="cybersécurité.html">Cybersécurité</a></li>
+                <li><a href="cryptage.html">Cryptage César</a></li>
+                <li><a href="certificats.html">Les Certificats Numériques</a></li>
+                <li><a href="https.html">Le protocole HTTPS</a></li>
+                <li><a href="python.html">Python</a></li>
+                <li><a href="qui-suis-je.html" class="active">Qui suis‑je ?</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <h2>🔐 Qu’est-ce qu’un certificat numérique ?</h2>
+
+    <div class="card">
+        <p>
+            Un certificat numérique est une sorte de <strong>carte d’identité pour un site web</strong>.
+            Il permet de vérifier que le site est le bon et que la connexion est sécurisée.
+        </p>
+
+        <p>Il sert à :</p>
+        <ul>
+            <li>✔ confirmer l’identité du site</li>
+            <li>✔ protéger les données échangées grâce au chiffrement</li>
+            <li>✔ afficher le cadenas <strong>🔒</strong> dans la barre d’adresse</li>
+        </ul>
+    </div>
+
+    <h2>🏫 Exemple simple pour un élève de 3ᵉ</h2>
+
+    <div class="card">
+        <p>
+            Imagine que tu veux parler à ton professeur : 
+            pour être sûr que c’est bien lui, il te montre sa **carte d’identité officielle**.
+        </p>
+
+        <p>
+            Sur Internet, un <strong>certificat</strong> joue la même fonction : 
+            il prouve que le site est authentique, pas une copie.
+        </p>
+    </div>
+
+    <h2>🌐 Où voit-on les certificats ?</h2>
+
+    <div class="card">
+        <p>
+            Quand tu visites un site sécurisé, tu vois un <strong>cadenas</strong> dans la barre d’adresse :
+        </p>
+
+        <ul>
+            <li>🔒 https://google.com</li>
+            <li>🔒 https://microsoft.com</li>
+        </ul>
+
+        <p>
+            En cliquant dessus, ton navigateur affiche le certificat du site.
+        </p>
+    </div>
+
+    <h2>🔒 À quoi sert un certificat ?</h2>
+
+    <div class="card">
+        <h3>1️⃣ Vérifier l’identité du site</h3>
+        <p>Tu sais que tu es sur le vrai site, pas un site pirate.</p>
+
+        <h3>2️⃣ Chiffrer les données</h3>
+        <p>Grâce à HTTPS, les informations envoyées sont protégées.</p>
+
+        <h3>3️⃣ Éviter les attaques (phishing, faux sites…)</h3>
+        <p>Un pirate ne peut pas facilement se faire passer pour un vrai site.</p>
+    </div>
+
+    <h2>🧪 Petite expérience pour ton stagiaire</h2>
+
+    <div class="card">
+        <p>✔ Aller sur <strong>https://google.com</strong></p>
+        <p>✔ Cliquer sur le cadenas → “Afficher le certificat”</p>
+
+        <p>Il pourra voir :</p>
+        <ul>
+            <li>🔸 le nom du site</li>
+            <li>🔸 la date d’expiration</li>
+            <li>🔸 l’autorité qui l’a signé</li>
+            <li>🔸 le type de chiffrement utilisé</li>
+        </ul>
+
+        <p>Ensuite tester un site sans HTTPS :</p>
+        <p>⚠ <strong>http://example.com</strong> → pas de cadenas</p>
+    </div>
+
+    <h2>🛡 Comment ça fonctionne (version simple)</h2>
+
+    <div class="card">
+        <ol>
+            <li>1. Le site montre son certificat.</li>
+            <li>2. Le navigateur vérifie qu’il est signé par une autorité de confiance.</li>
+            <li>3. Si tout est bon → connexion chiffrée.</li>
+            <li>4. Le cadenas s’affiche.</li>
+        </ol>
+
+        <p>Tout cela se fait en **moins d’une seconde**.</p>
+    </div>
+
+    <h2>🏢 Exemples d’autorités de confiance</h2>
+
+    <div class="card">
+        <ul>
+            <li>DigiCert</li>
+            <li>GlobalSign</li>
+            <li>Let’s Encrypt</li>
+            <li>Sectigo</li>
+        </ul>
+        <p>Ce sont des “mairies du web” qui signent les certificats.</p>
+    </div>
+
+    <h2>📝 Mini-quiz (pour vérifier les connaissances)</h2>
+
+    <div class="exercice">
+        <h3>1️⃣ À quoi sert un certificat numérique ?</h3>
+        <ul>
+            <li>A — décorer le site</li>
+            <li>B — prouver son identité et chiffrer la connexion</li>
+            <li>C — accélérer l’ordinateur</li>
+        </ul>
+        <p><strong>👉 Réponse : B</strong></p>
+    </div>
+
+    <div class="exercice">
+        <h3>2️⃣ Comment reconnaître un site sécurisé ?</h3>
+        <ul>
+            <li>A — il est coloré</li>
+            <li>B — il a des pubs</li>
+            <li>C — il commence par HTTPS + cadenas 🔒</li>
+        </ul>
+        <p><strong>👉 Réponse : C</strong></p>
+    </div>
+
+    <div class="exercice">
+        <h3>3️⃣ Pourquoi éviter les sites sans HTTPS ?</h3>
+        <ul>
+            <li>A — c’est moche</li>
+            <li>B — c’est lent</li>
+            <li>C — les données peuvent être lues ou volées</li>
+        </ul>
+        <p><strong>👉 Réponse : C</strong></p>
+    </div>
+
+</main>
+
+<footer>
+    © 2025 TechMinds Alliance – Fiche pédagogique sur les certificats numériques
+</footer>
+
+<script>
+    // Menu responsive mobile
+    const menuToggle = document.getElementById('menuToggle');
+    const mainMenu = document.getElementById('mainMenu');
+    menuToggle.addEventListener('click', () => {
+        mainMenu.classList.toggle('open');
+    });
+</script>
+
+</body>
+</html>
+

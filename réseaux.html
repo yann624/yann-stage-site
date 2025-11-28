@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réseaux informatiques - Yann</title>
+ <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<header>
+       <div class="logo-title">
+        <img src="images/logo.png" alt="Logo TechMinds Alliance">
+        <h1></h1>
+    </div>
+        <nav>
+                <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+                <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="mon-stage.html">Mon stage</a></li>
+                <li><a href="systemes_information.html" class="active">Systèmes d'information</a></li>
+                <li><a href="réseaux.html">Réseaux informatiques</a></li>
+                <li><a href="cybersécurité.html">Cybersécurité</a></li>
+                <li><a href="cryptage.html">Cryptage César</a></li>
+                <li><a href="certificats.html">Les Certificats Numériques</a></li>
+                <li><a href="https.html">Le protocole HTTPS</a></li>
+                <li><a href="python.html">Python</a></li>
+                <li><a href="qui-suis-je.html" class="active">Qui suis‑je ?</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <h1 class="fade-in-up">Réseaux informatiques</h1>
+    <p class="fade-in-up delay-1">Un réseau informatique permet de relier plusieurs appareils pour qu'ils puissent communiquer entre eux et échanger des informations.</p>
+
+    <section class="box fade-in-up delay-1">
+        <span class="badge">Définition</span>
+        <h2>C'est quoi un réseau ?</h2>
+        <p>Un réseau informatique, c'est un ensemble d'ordinateurs, de téléphones, de tablettes, de serveurs et d'autres appareils qui sont connectés entre eux. Le but est de partager :</p>
+        <ul>
+            <li>des <strong>fichiers</strong> (documents, images, vidéos),</li>
+            <li>des <strong>périphériques</strong> (imprimantes, stockage),</li>
+            <li>et l'<strong>accès à Internet</strong>.</li>
+        </ul>
+    </section>
+
+    <section class="box fade-in-up delay-2">
+        <span class="badge">Exemple de réseau à la maison</span>
+        <h2>Schéma simple</h2>
+        <p>Voici un exemple simplifié de réseau domestique :</p>
+        <div class="schema">
+            <div class="schema-box">Fournisseur Internet<br>(FAI)</div>
+            <div class="arrow">⬇</div>
+            <div class="schema-box">Box Internet / Routeur</div>
+            <div class="arrow">⬇</div>
+            <div class="schema-box">Wi-Fi / Câble</div>
+            <div class="arrow">⬇</div>
+            <div class="schema-box">PC - Smartphone - Tablette - TV</div>
+        </div>
+        <p style="margin-top: 15px;">La box Internet joue un rôle très important : elle connecte la maison au fournisseur d'accès Internet, distribue le réseau dans la maison (Wi-Fi, Ethernet) et attribue des adresses IP aux appareils.</p>
+    </section>
+
+    <section class="box fade-in-up delay-3">
+        <span class="badge">Vocabulaire</span>
+        <h2>Mots importants à retenir</h2>
+        <ul>
+            <li><strong>Adresse IP</strong> : numéro qui identifie un appareil sur le réseau.</li>
+            <li><strong>Routeur</strong> : appareil qui oriente les données entre les réseaux.</li>
+            <li><strong>Wi-Fi</strong> : technologie qui permet la connexion sans fil.</li>
+            <li><strong>Serveur</strong> : ordinateur spécial qui fournit des services (sites web, fichiers, mails...).</li>
+        </ul>
+    </section>
+</main>
+
+<script>
+function toggleMenu() {
+    document.getElementById("nav-links").classList.toggle("open");
+}
+</script>
+
+</body>
+</html>

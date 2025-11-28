@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Cryptage César - TechMinds Alliance</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #0099a8;
+            color: white;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-title {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-title img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            padding: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #0099a8;
+        }
+
+        .card {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            background: #fdfdfd;
+        }
+
+        /* Outil chiffrement */
+        .tool {
+            padding: 15px;
+            border: 2px solid #0099a8;
+            border-radius: 10px;
+            background: #eefbfd;
+            margin-bottom: 25px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, textarea, select, button {
+            width: 100%;
+            margin-top: 8px;
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button {
+            background: #0099a8;
+            color: white;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .buttons-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .buttons-row button {
+            width: auto;
+            padding: 8px 16px;
+        }
+
+        pre {
+            background: #1e1e1e;
+            color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+
+        /* Animation box */
+        .animation-box {
+            border-radius: 8px;
+            border: 1px dashed #0099a8;
+            padding: 10px;
+            background: #f4feff;
+            font-size: 0.95rem;
+            min-height: 40px;
+            display: flex;
+            align-items: center;
+        }
+
+        .animation-highlight {
+            font-weight: bold;
+            color: #d9534f;
+        }
+
+        .progress {
+            margin-top: 8px;
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background: #d6f4f8;
+            overflow: hidden;
+        }
+
+        .progress-inner {
+            height: 100%;
+            width: 0%;
+            background: #0099a8;
+            transition: width 0.15s linear;
+        }
+
+        /* Menu responsive */
+        .menu-toggle {
+            display: none;
+            color: white;
+            cursor: pointer;
+            font-size: 1.6rem;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                background: #0099a8;
+                padding: 10px;
+            }
+
+            nav ul.open {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .buttons-row {
+                flex-direction: column;
+            }
+
+            .buttons-row button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+   <header>
+    <div class="logo-title">
+        <img src="images/logo.png" alt="Logo TechMinds Alliance">
+        <h1></h1>
+    </div>
+
+    <div class="menu-toggle" id="menuToggle">☰ Menu</div>
+    <nav>
+        <ul id="mainMenu">
+                <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+                <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="mon-stage.html">Mon stage</a></li>
+                <li><a href="systemes_information.html" class="active">Systèmes d'information</a></li>
+                <li><a href="réseaux.html">Réseaux informatiques</a></li>
+                <li><a href="cybersécurité.html">Cybersécurité</a></li>
+                <li><a href="cryptage.html">Cryptage César</a></li>
+                <li><a href="certificats.html">Les Certificats Numériques</a></li>
+                <li><a href="https.html">Le protocole HTTPS</a></li>
+                <li><a href="python.html">Python</a></li>
+                <li><a href="qui-suis-je.html" class="active">Qui suis‑je ?</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <h2>🔐 Introduction au cryptage César</h2>
+    <div class="card">
+        <p>
+            Le <strong>chiffrement César</strong> est une méthode de cryptage très simple :
+            on décale les lettres de l’alphabet selon une <strong>clé</strong>.
+        </p>
+        <p>Exemple : clé = 3</p>
+        <ul>
+            <li>A → D</li>
+            <li>B → E</li>
+            <li>C → F</li>
+            <li>X → A</li>
+            <li>Y → B</li>
+            <li>Z → C</li>
+        </ul>
+        <p>
+            Pour <strong>déchiffrer</strong>, on applique le décalage inverse (on enlève la clé).
+        </p>
+    </div>
+
+    <h2>🛠 Outil interactif avec animation</h2>
+
+    <div class="tool">
+        <label for="message">Message :</label>
+        <textarea id="message" rows="3" placeholder="Ex : Bonjour tout le monde"></textarea>
+
+        <label for="cle">Clé (0 à 25) :</label>
+        <input type="number" id="cle" min="0" max="25" value="3">
+
+        <label for="action">Action :</label>
+        <select id="action">
+            <option value="chiffrer">Chiffrer</option>
+            <option value="dechiffrer">Déchiffrer</option>
+        </select>
+
+        <div class="buttons-row">
+            <button type="button" onclick="cesarInstant()">Exécuter (instantané)</button>
+            <button type="button" onclick="cesarAnimated()">Exécuter avec animation</button>
+        </div>
+
+        <h3>Résultat :</h3>
+        <textarea id="resultat" rows="3" readonly></textarea>
+
+        <h3>Animation du chiffrement :</h3>
+        <div class="animation-box" id="animationZone">
+            L’animation affichera, étape par étape, comment chaque lettre est transformée.
+        </div>
+        <div class="progress">
+            <div class="progress-inner" id="progressBar"></div>
+        </div>
+    </div>
+
+    <h2>🐍 Code Python du chiffrement César</h2>
+    <div class="card">
+        <pre><code>def chiffrer_cesar(texte, cle):
+    resultat = ""
+    for char in texte:
+        if char.isalpha():
+            base = ord('A') if char.isupper() else ord('a')
+            resultat += chr((ord(char) - base + cle) % 26 + base)
+        else:
+            resultat += char
+    return resultat
+
+
+def dechiffrer_cesar(texte, cle):
+    return chiffrer_cesar(texte, -cle)
+
+
+print("=== Chiffrement César ===")
+message = input("Message : ")
+cle = int(input("Clé : "))
+
+print("Chiffré :", chiffrer_cesar(message, cle))
+print("Déchiffré :", dechiffrer_cesar(chiffrer_cesar(message, cle), cle))</code></pre>
+    </div>
+
+</main>
+
+<footer style="text-align:center; padding:10px; color:#555;">
+    © 2025 TechMinds Alliance - Cryptage César
+</footer>
+
+<script>
+    // Menu responsive
+    const menuToggle = document.getElementById('menuToggle');
+    const mainMenu = document.getElementById('mainMenu');
+    menuToggle.addEventListener('click', () => {
+        mainMenu.classList.toggle('open');
+    });
+
+    // --- LOGIQUE CESAR (instantané) ---
+    function cesarProcess(texte, cle, action) {
+        let resultat = "";
+        for (let char of texte) {
+            if (/[a-zA-Z]/.test(char)) {
+                const base = char === char.toUpperCase() ? 65 : 97;
+                const c = char.charCodeAt(0) - base;
+                let newPos;
+                if (action === "chiffrer") {
+                    newPos = (c + cle) % 26;
+                } else {
+                    newPos = (c - cle + 26) % 26;
+                }
+                resultat += String.fromCharCode(newPos + base);
+            } else {
+                resultat += char;
+            }
+        }
+        return resultat;
+    }
+
+    function cesarInstant() {
+        const texte = document.getElementById("message").value;
+        const cle = parseInt(document.getElementById("cle").value);
+        const action = document.getElementById("action").value;
+
+        if (isNaN(cle) || cle < 0 || cle > 25) {
+            alert("Merci d’entrer une clé entre 0 et 25.");
+            return;
+        }
+
+        const resultat = cesarProcess(texte, cle, action);
+        document.getElementById("resultat").value = resultat;
+
+        // Met à jour la zone d’animation avec un résumé
+        const animZone = document.getElementById("animationZone");
+        animZone.innerHTML = "Exécution instantanée terminée. Utilise le bouton &laquo; Exécuter avec animation &raquo; pour voir le détail lettre par lettre.";
+        document.getElementById("progressBar").style.width = "100%";
+    }
+
+    // --- ANIMATION LETTRE PAR LETTRE ---
+    let animationInterval = null;
+
+    function cesarAnimated() {
+        const texte = document.getElementById("message").value;
+        const cle = parseInt(document.getElementById("cle").value);
+        const action = document.getElementById("action").value;
+        const resultatArea = document.getElementById("resultat");
+        const animZone = document.getElementById("animationZone");
+        const progressBar = document.getElementById("progressBar");
+
+        if (!texte) {
+            alert("Merci de saisir un message à chiffrer/déchiffrer.");
+            return;
+        }
+
+        if (isNaN(cle) || cle < 0 || cle > 25) {
+            alert("Merci d’entrer une clé entre 0 et 25.");
+            return;
+        }
+
+        // On arrête une éventuelle animation précédente
+        if (animationInterval !== null) {
+            clearInterval(animationInterval);
+            animationInterval = null;
+        }
+
+        let i = 0;
+        let resultat = "";
+        resultatArea.value = "";
+        animZone.innerHTML = "Début de l’animation...";
+        progressBar.style.width = "0%";
+
+        const total = texte.length;
+
+        animationInterval = setInterval(() => {
+            if (i >= total) {
+                clearInterval(animationInterval);
+                animationInterval = null;
+                animZone.innerHTML = "✔ Animation terminée. Résultat final : " +
+                    '<span class="animation-highlight">' + escapeHtml(resultat) + "</span>";
+                progressBar.style.width = "100%";
+                return;
+            }
+
+            const char = texte[i];
+            let transformed = char;
+
+            if (/[a-zA-Z]/.test(char)) {
+                const base = char === char.toUpperCase() ? 65 : 97;
+                const c = char.charCodeAt(0) - base;
+
+                let newPos;
+                if (action === "chiffrer") {
+                    newPos = (c + cle) % 26;
+                } else {
+                    newPos = (c - cle + 26) % 26;
+                }
+                transformed = String.fromCharCode(newPos + base);
+
+                animZone.innerHTML =
+                    'Étape ' + (i + 1) + " / " + total +
+                    ' : la lettre <span class="animation-highlight">"' +
+                    escapeHtml(char) +
+                    '"</span> devient <span class="animation-highlight">"' +
+                    escapeHtml(transformed) + '"</span>.';
+            } else {
+                animZone.innerHTML =
+                    'Étape ' + (i + 1) + " / " + total +
+                    ' : caractère non chiffré (espace, chiffre ou ponctuation) : ' +
+                    '<span class="animation-highlight">"' + escapeHtml(char) + '"</span>';
+            }
+
+            resultat += transformed;
+            resultatArea.value = resultat;
+
+            const pourcentage = ((i + 1) / total) * 100;
+            progressBar.style.width = pourcentage + "%";
+
+            i++;
+        }, 150); // 150 ms par caractère
+    }
+
+    // Petit helper pour éviter les problèmes avec les guillemets dans l’HTML
+    function escapeHtml(text) {
+        if (text === null || text === undefined) return "";
+        return String(text)
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+    }
+</script>
+
+</body>
+</html>

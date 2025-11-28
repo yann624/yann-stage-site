@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Systèmes d'information - Yann</title>
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+     <div class="logo-title">
+        <img src="images/logo.png" alt="Logo TechMinds Alliance">
+        <h1></h1>
+    </div>
+        <nav>
+                <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+                <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="mon-stage.html">Mon stage</a></li>
+                <li><a href="systemes_information.html" class="active">Systèmes d'information</a></li>
+                <li><a href="réseaux.html">Réseaux informatiques</a></li>
+                <li><a href="cybersécurité.html">Cybersécurité</a></li>
+                <li><a href="cryptage.html">Cryptage César</a></li>
+                <li><a href="certificats.html">Les Certificats Numériques</a></li>
+                <li><a href="https.html">Le protocole HTTPS</a></li>
+                <li><a href="python.html">Python</a></li>
+                <li><a href="qui-suis-je.html" class="active">Qui suis‑je ?</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <h1 class="fade-in-up">Systèmes d'information</h1>
+    <p class="fade-in-up delay-1">Un système d'information sert à gérer, stocker, protéger et partager les données d'une organisation.</p>
+
+    <section class="box fade-in-up delay-1">
+        <span class="badge">Définition</span>
+        <h2>Qu’est‑ce qu’un système d’information ?</h2>
+        <p>Un système d'information (SI) regroupe :</p>
+        <ul>
+            <li>le <strong>matériel</strong> (ordinateurs, serveurs, routeurs),</li>
+            <li>les <strong>logiciels</strong> (applications, sites web, outils interne),</li>
+            <li>les <strong>données</strong> (clients, dossiers, documents),</li>
+            <li>et les <strong>utilisateurs</strong> (employés, clients, administrateurs).</li>
+        </ul>
+        <p>Le but d’un SI est d’aider l’entreprise à fonctionner efficacement et en sécurité.</p>
+    </section>
+
+    <section class="box fade-in-up delay-2">
+        <span class="badge">Schéma simple</span>
+        <h2>Comment fonctionne un SI ?</h2>
+        <div class="schema-si">
+            <div class="schema-card">Utilisateurs</div>
+            <div class="schema-card">Logiciels</div>
+            <div class="schema-card">Serveurs</div>
+            <div class="schema-card">Données</div>
+            <div class="schema-card">Sécurité</div>
+        </div>
+        <p style="margin-top: 15px;">Tous ces éléments communiquent ensemble pour permettre à l’entreprise de travailler au quotidien.</p>
+    </section>
+
+    <section class="box fade-in-up delay-3">
+        <span class="badge">Exemples concrets</span>
+        <h2>Exemples de systèmes d'information</h2>
+        <ul>
+            <li>Une application de réservation (Uber, SNCF)</li>
+            <li>Un site de vente en ligne (Amazon, Fnac)</li>
+            <li>Le système scolaire (notes, emplois du temps, Pronote)</li>
+            <li>Les hôpitaux (dossiers médicaux, planning des médecins)</li>
+        </ul>
+    </section>
+</main>
+
+<script>
+function toggleMenu() {
+    document.getElementById('nav-links').classList.toggle('open');
+}
+</script>
+
+</body>
+</html>
